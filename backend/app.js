@@ -16,7 +16,7 @@ const HOST = '0.0.0.0';
 
 connectDb();
 
-app.use(cors({ origin: "http://localhost:3000", credentials: true, methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], }));
+app.use(cors({ origin: "https://todo-j6en2ec4s-samuels-projects-6332d5ca.vercel.app/", credentials: true, methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
