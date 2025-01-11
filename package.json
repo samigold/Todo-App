@@ -9,7 +9,7 @@
     "test": "jest",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "type": "commonjs"
+  "type": "commonjs",
   "author": "",
   "license": "ISC",
   "description": "",
