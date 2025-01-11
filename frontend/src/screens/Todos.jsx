@@ -36,7 +36,7 @@ const Todos = () => {
     const { userInfo } = useSelector((state) => state.auth)
 
     const { data, error, isValidating, mutate } = useSWR(
-        "http://localhost:8000/api/tasks",
+        "https://todo-app-backend-7gdf.onrender.com/api/tasks",
         fetcher
     );
 
@@ -65,7 +65,7 @@ const Todos = () => {
     };
 
     async function addToDo() {
-        const response = await fetcher("http://localhost:8000/api/tasks", {
+        const response = await fetcher("https://todo-app-backend-7gdf.onrender.com/api/tasks", {
             method: "POST",
             body: { description },
         });
@@ -87,7 +87,7 @@ const Todos = () => {
     async function deleteTodo(id){
         toast.success("Task deleted successfully");
         await mutate(async ()=>{
-            const response = await fetcher(`http://localhost:8000/api/tasks/${id}`, {
+            const response = await fetcher(`https://todo-app-backend-7gdf.onrender.com/api/tasks/${id}`, {
                 method: "DELETE",
             })
             if(response.error){
@@ -105,7 +105,7 @@ const Todos = () => {
     async function completeTodo (id) {
         toast.success("Status updated successfully");
         await mutate(async () => {
-            const response = await fetcher(`http://localhost:8000/api/tasks/${id}`, {
+            const response = await fetcher(`https://todo-app-backend-7gdf.onrender.com/api/tasks/${id}`, {
                 method: "PUT",
             });
             if(response.error){
@@ -123,7 +123,7 @@ const Todos = () => {
     //     toast.success("Task updated successfully")
 
     //     await mutate(async ()=>{
-    //         const response = await fetcher(`http://localhost:8000/api/tasks/${id}`, {
+    //         const response = await fetcher(`https://todo-app-backend-7gdf.onrender.com/api/tasks/${id}`, {
     //             method: "PUT",
     //         })
     //         if(response.error){
@@ -138,7 +138,7 @@ const Todos = () => {
     async function handleUpdate(id, newDescription) {
         toast.success("Task Updated Successfully!")
         await mutate(async () => {
-            const response = await fetcher(`http://localhost:8000/api/tasks/${id}`, {
+            const response = await fetcher(`https://todo-app-backend-7gdf.onrender.com/api/tasks/${id}`, {
                 method: "PATCH",
                 body: { description: newDescription },
             });
