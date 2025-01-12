@@ -6,7 +6,7 @@ const generateToken = (res, userId) => {
     res.cookie('jwt', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV !== 'developement',
-        sameSite: 'strict',
+        sameSite: 'none',
         maxAge: 30 * 24 * 60 * 60 * 1000 //this is 30 days in milliseconds. its 30 days * 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
     });
 };
