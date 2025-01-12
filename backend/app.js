@@ -16,7 +16,7 @@ const HOST = '0.0.0.0';
 
 connectDb();
 
-app.use(cors({ origin: "https://todo-app-wheat-tau-53.vercel.app", credentials: true, methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], }));
+app.use(cors({ origin: "https://oceptech.com/", credentials: true, methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
